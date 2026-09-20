@@ -40,7 +40,7 @@ body > div {
 
 #logo {
     width: 100%;
-    max-width: 360px;
+    max-width: 300px;
     height: auto;
     display: block;
     margin: 30px 0 0 0;
@@ -50,16 +50,17 @@ body > div {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 0;
     padding: 0 10px;
 }
 
 .menu-main ul {
     list-style: none;
-    width: 100%;
+    width: calc(100vw - 40px);
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 25px;
 }
 
 .menu-main li {
@@ -69,7 +70,8 @@ body > div {
 
 .menu-main a {
     width: 100%;
-    min-height: 72px;
+    height: 55px;
+    min-height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
