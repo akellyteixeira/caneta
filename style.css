@@ -9,7 +9,7 @@
 html,
 body {
     width: 100%;
-    min-height: 100%;
+    min-height: 100dvh;
 }
 
 body {
@@ -18,12 +18,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 2712px;
+    min-height: 100vh;
 }
 
 body > div {
-    width: 1140px;
-    min-height: 2630px;
+    width: 100%;
+    min-height: 100vh;
     background-color: #ffffff;
     border: 3px solid #bdbdbd;
     display: flex;
@@ -36,12 +36,12 @@ body > div {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 100px;
+    padding-bottom: 35px;
 }
 
 #logo {
-    width: 1000px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 360px;
     height: auto;
     display: block;
 }
@@ -50,15 +50,15 @@ body > div {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 0;
 }
 
 .menu-main ul {
     list-style: none;
-    width: 950px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 55px;
+    gap: 25px;
 }
 
 .menu-main li {
@@ -68,16 +68,16 @@ body > div {
 
 .menu-main a {
     width: 100%;
-    height: 180px;
+    min-height: 72px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c87d87;
     color: #f4f1ea;
     text-decoration: none;
-    font-size: 60px;
+    font-size: 20px;
     font-weight: 600;
-    border-radius: 45px;
+    border-radius: 20px;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
     transition:
         transform 0.2s ease,
@@ -98,8 +98,8 @@ body > div {
 
 .app {
     position: relative;
-    width: 1140px;
-    min-height: 2630px;
+    width: 100%;
+    min-height: 100vh;
     background-color: #f4f1ea;
     border: 3px solid #bdbdbd;
     overflow: hidden;
@@ -110,7 +110,7 @@ body > div {
 .topo {
     position: relative;
     width: 100%;
-    height: 180px;
+    min-height: 72px;
     display: flex;
     align-items: center;
     padding: 40px;
@@ -148,11 +148,11 @@ body > div {
     position: absolute;
     top: 0;
     left: 0;
-    width: 650px;
-    height: 100%;
+    width: min(88vw, 340px);
+    height: 100dvh;
     background-color: #f4f1ea;
     z-index: 10;
-    padding: 60px 50px;
+    padding: 25px 18px;
     box-shadow: 15px 0 30px rgba(0, 0, 0, 0.15);
     transform: translateX(-105%);
     transition: transform 0.3s ease;
@@ -165,24 +165,24 @@ body > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 35px;
 }
 
 
 .menu-header h2 {
     color: #6b7556;
-    font-size: 55px;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .fechar-menu {
-    width: 75px;
-    height: 75px;
+    width: 48px;
+    height: 48px;
     border: none;
     background-color: #c87d87;
     border-radius: 20px;
     color: #f4f1ea;
-    font-size: 50px;
+    font-size: 18px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -193,7 +193,7 @@ body > div {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 13px;
 }
 
 
@@ -201,13 +201,13 @@ body > div {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 100px;
-    padding: 20px 30px;
+    min-height: 60px;
+    padding: 15px 16px;
     background-color: #c87d87;
     border-radius: 25px;
     color: #f4f1ea;
     text-decoration: none;
-    font-size: 32px;
+    font-size: 18px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
     transition: 0.2s;
 }
@@ -218,15 +218,15 @@ body > div {
 }
 
 .conteudo {
-    width: 900px;
-    margin: 120px auto 0;
-    padding-bottom: 100px;
+    width: calc(100% - 32px);
+    margin: 45px auto 0;
+    padding-bottom: 35px;
 }
 
 .conteudo h1 {
     text-align: center;
     color: #6b7556;
-    font-size: 65px;
+    font-size: 32px;
     font-weight: 600;
     margin-bottom: 25px;
 }
@@ -234,38 +234,38 @@ body > div {
 .subtitulo {
     text-align: center;
     color: #6b7556;
-    font-size: 32px;
-    margin-bottom: 100px;
+    font-size: 18px;
+    margin-bottom: 40px;
 }
 
 #formDose {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 55px;
+    gap: 25px;
 }
 
 .campo {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 9px;
 }
 
 .campo label {
     color: #6b7556;
-    font-size: 32px;
+    font-size: 18px;
     padding-left: 10px;
 }
 
 .campo input {
     width: 100%;
-    height: 120px;
+    height: 64px;
     border: 2px solid #ead9c9;
-    border-radius: 30px;
+    border-radius: 18px;
     background-color: #fffaf5;
-    padding: 0 35px;
+    padding: 0 18px;
     color: #6b7556;
-    font-size: 34px;
+    font-size: 18px;
     outline: none;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
     transition: 0.2s;
@@ -287,27 +287,27 @@ body > div {
 }
 
 .dosagem-container input {
-    padding-right: 100px;
+    padding-right: 65px;
 }
 
 .dosagem-container span {
     position: absolute;
-    right: 35px;
+    right: 19px;
     top: 50%;
     transform: translateY(-50%);
     color: #6b7556;
-    font-size: 32px;
+    font-size: 18px;
 }
 
 .botao-principal {
     width: 100%;
-    height: 130px;
-    margin-top: 30px;
+    min-height: 68px;
+    margin-top: 8px;
     border: none;
-    border-radius: 35px;
+    border-radius: 20px;
     background-color: #c87d87;
     color: #f4f1ea;
-    font-size: 38px;
+    font-size: 20px;
     cursor: pointer;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
     transition:
@@ -329,22 +329,22 @@ body > div {
 
 .historico {
     width: 100%;
-    margin-top: 140px;
-    padding-bottom: 100px;
+    margin-top: 65px;
+    padding-bottom: 35px;
 }
 
 .historico h2 {
     color: #6b7556;
-    font-size: 48px;
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .tabela-container {
     width: 100%;
     overflow-x: auto;
-    border-radius: 30px;
+    border-radius: 18px;
     box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.10);
 }
@@ -358,20 +358,20 @@ body > div {
 }
 
 .tabela-container th {
-    height: 100px;
-    padding: 20px;
+    height: 58px;
+    padding: 12px;
     background-color: #c87d87;
     color: #f4f1ea;
-    font-size: 28px;
+    font-size: 14px;
     font-weight: 600;
     text-align: left;
 }
 
 .tabela-container td {
-    height: 100px;
-    padding: 20px;
+    height: 58px;
+    padding: 12px;
     color: #6b7556;
-    font-size: 27px;
+    font-size: 14px;
     border-bottom: 2px solid #ead9c9;
 }
 
@@ -388,22 +388,22 @@ body > div {
 }
 
 .conteudo-peso {
-    width: 900px;
-    margin: 100px auto 0;
+    width: calc(100% - 32px);
+    margin: 40px auto 0;
     padding-bottom: 150px;
 }
 
 .conteudo-peso h1 {
     text-align: center;
     color: #6b7556;
-    font-size: 65px;
+    font-size: 32px;
     font-weight: 600;
     margin-bottom: 25px;
 }
 
 .conteudo-peso h2 {
     color: #6b7556;
-    font-size: 45px;
+    font-size: 26px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
@@ -411,18 +411,18 @@ body > div {
 
 .descricao-secao {
     color: #6b7556;
-    font-size: 27px;
+    font-size: 14px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .config-peso {
     width: 100%;
-    padding: 55px;
+    padding: 24px 18px;
     margin-top: 80px;
     background-color: #fffaf5;
     border: 2px solid #ead9c9;
-    border-radius: 35px;
+    border-radius: 20px;
     box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.08);
 }
@@ -443,7 +443,7 @@ body > div {
 
 .campo-peso label {
     color: #6b7556;
-    font-size: 30px;
+    font-size: 18px;
     padding-left: 10px;
     font-weight: 600;
 }
@@ -453,11 +453,11 @@ body > div {
     width: 100%;
     height: 110px;
     border: 2px solid #ead9c9;
-    border-radius: 30px;
+    border-radius: 18px;
     background-color: #ffffff;
-    padding: 0 35px;
+    padding: 0 18px;
     color: #6b7556;
-    font-size: 32px;
+    font-size: 18px;
     outline: none;
     box-shadow:
         0 8px 15px rgba(0, 0, 0, 0.06);
@@ -477,28 +477,28 @@ body > div {
 }
 
 .input-peso input {
-    padding-right: 100px;
+    padding-right: 65px;
 }
 
 .input-peso span {
     position: absolute;
-    right: 35px;
+    right: 19px;
     top: 50%;
     transform: translateY(-50%);
     color: #6b7556;
-    font-size: 30px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .botao-peso {
     width: 100%;
-    height: 120px;
+    height: 64px;
     margin-top: 15px;
     border: none;
-    border-radius: 30px;
+    border-radius: 18px;
     background-color: #c87d87;
     color: #f4f1ea;
-    font-size: 34px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     box-shadow:
@@ -525,25 +525,24 @@ body > div {
 
 .progresso-peso {
     width: 100%;
-    margin-top: 90px;
-    padding: 55px;
+    margin-top: 45px;
+    padding: 24px 18px;
     background-color: #ffffff;
     border: 2px solid #ead9c9;
-    border-radius: 35px;
+    border-radius: 20px;
     box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .progresso-info {
     display: grid;
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 25px;
     margin-top: 50px;
 }
 
 .progresso-info > div {
-    min-height: 160px;
+    min-height: 90px;
     padding: 25px;
     background-color: #f4f1ea;
     border-radius: 25px;
@@ -556,18 +555,18 @@ body > div {
 
 .titulo-info {
     color: #6b7556;
-    font-size: 23px;
+    font-size: 15px;
     margin-bottom: 12px;
 }
 
 .progresso-info strong {
     color: #c87d87;
-    font-size: 35px;
+    font-size: 17px;
 }
 
 .barra-container {
     width: 100%;
-    height: 45px;
+    height: 27px;
     margin-top: 55px;
     background-color: #ead9c9;
     border-radius: 50px;
@@ -576,7 +575,7 @@ body > div {
 
 .barra-progresso {
     width: 0%;
-    height: 100%;
+    height: 100dvh;
     background-color: #c87d87;
     border-radius: 50px;
     transition: width 0.5s ease;
@@ -584,36 +583,36 @@ body > div {
 
 .porcentagem {
     color: #6b7556;
-    font-size: 25px;
+    font-size: 17px;
     text-align: center;
     margin-top: 25px;
 }
 
 .registro-semanal {
     width: 100%;
-    margin-top: 90px;
-    padding: 55px;
+    margin-top: 45px;
+    padding: 24px 18px;
     background-color: #fffaf5;
     border: 2px solid #ead9c9;
-    border-radius: 35px;
+    border-radius: 20px;
     box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .historico-peso {
     width: 100%;
-    margin-top: 90px;
-    padding-bottom: 100px;
+    margin-top: 45px;
+    padding-bottom: 35px;
 }
 
 .historico-peso h2 {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .historico-peso .tabela-container {
     width: 100%;
     overflow-x: auto;
-    border-radius: 30px;
+    border-radius: 18px;
     box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.10);
 }
@@ -625,20 +624,20 @@ body > div {
 }
 
 .historico-peso th {
-    height: 100px;
-    padding: 20px;
+    height: 58px;
+    padding: 12px;
     background-color: #c87d87;
     color: #f4f1ea;
-    font-size: 27px;
+    font-size: 14px;
     font-weight: 600;
     text-align: left;
 }
 
 .historico-peso td {
-    height: 100px;
-    padding: 20px;
+    height: 58px;
+    padding: 12px;
     color: #6b7556;
-    font-size: 27px;
+    font-size: 14px;
     border-bottom: 2px solid #ead9c9;
 }
 
@@ -652,4 +651,17 @@ body > div {
 
 .historico-peso tbody tr:last-child td {
     border-bottom: none;
+}
+
+/* Regras finais para uso exclusivamente em celular */
+html, body { width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+body { min-height: 100vh; padding: 0; display: block; }
+body > div, .app { width: 100%; min-height: 100vh; border-left: 0; border-right: 0; }
+img { max-width: 100%; height: auto; }
+input, textarea, select, button { max-width: 100%; font-family: inherit; }
+.tabela-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 360px) {
+    .conteudo, .conteudo-peso { width: calc(100% - 24px); }
+    .menu-main { padding-left: 15px; padding-right: 15px; }
+    .menu-main a { font-size: 18px; }
 }
