@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,11 @@
     <title>Canetinha | Hidratação</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="app">
         <header class="topo">
-            <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Abrir menu">
+            <button class="menu-button" id="menuButton" aria-label="Abrir menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -22,46 +21,18 @@
         <aside class="menu-lateral" id="menuLateral">
             <div class="menu-header">
                 <h2>Menu</h2>
-                <button
-                    class="fechar-menu"
-                    id="fecharMenu"
-                    aria-label="Fechar menu"
-                >
+                <button class="fechar-menu" id="fecharMenu" aria-label="Fechar menu">
                     &times;
                 </button>
             </div>
             <nav>
                 <ul>
-                    <li>
-                        <a href="index.html">
-                            Início
-                        </a>
-                    </li>
-                    <li>
-                        <a href="dose.html">
-                            Registrar aplicação
-                        </a>
-                    </li>
-                    <li>
-                        <a href="alimentacao.html">
-                            Registrar alimentação
-                        </a>
-                    </li>
-                    <li>
-                        <a href="peso.html">
-                            Registrar peso
-                        </a>
-                    </li>
-                    <li>
-                        <a href="hidratacao.html">
-                            Hidratação
-                        </a>
-                    </li>
-                    <li>
-                        <a href="dashboard.html">
-                            Dashboard
-                        </a>
-                    </li>
+                    <li><a href="dose.html">Registrar aplicação</a></li>
+                    <li><a href="alimentacao.html">Registrar alimentação</a></li>
+                    <li><a href="peso.html">Registrar peso</a></li>
+                    <li><a href="hidratacao.html">Registrar hidratação</a></li>
+                    <li><a href="musculacao.html">Registrar musculação</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
                 </ul>
             </nav>
         </aside>
@@ -81,22 +52,12 @@
                             Meta de água
                         </label>
                         <div class="input-agua">
-                            <input
-                                type="number"
-                                id="metaAgua"
-                                name="metaAgua"
-                                min="0.1"
-                                step="0.1"
-                                placeholder="Ex.: 2"
-                                required
-                            >
+                            <input type="number" id="metaAgua" name="metaAgua" min="0.1" step="0.1" placeholder="Ex.: 2"
+                                required>
                             <span>L</span>
                         </div>
                     </div>
-                    <button
-                        type="submit"
-                        class="botao-agua"
-                    >
+                    <button type="submit" class="botao-agua">
                         Salvar meta
                     </button>
                 </form>
@@ -120,33 +81,19 @@
                     </strong>
                 </div>
                 <div class="barra-agua-container">
-                    <div
-                        class="barra-agua"
-                        id="barraAgua"
-                    ></div>
+                    <div class="barra-agua" id="barraAgua"></div>
                 </div>
-                <p
-                    class="porcentagem-agua"
-                    id="porcentagemAgua"
-                >
+                <p class="porcentagem-agua" id="porcentagemAgua">
                     0%
                 </p>
             </section>
             <section class="adicionar-agua">
                 <h2>Adicionar água</h2>
                 <div class="botoes-agua">
-                    <button
-                        type="button"
-                        class="botao-copo"
-                        id="btn200"
-                    >
+                    <button type="button" class="botao-copo" id="btn200">
                         + 200 ml
                     </button>
-                    <button
-                        type="button"
-                        class="botao-copo"
-                        id="btn400"
-                    >
+                    <button type="button" class="botao-copo" id="btn400">
                         + 400 ml
                     </button>
                 </div>
@@ -347,4 +294,5 @@
         atualizarTela();
     </script>
 </body>
+
 </html>

@@ -581,7 +581,7 @@ body > div {
 
 .barra-progresso {
     width: 0%;
-    height: 100dvh;
+    height: 100%;
     background-color: #c87d87;
     border-radius: 50px;
     transition: width 0.5s ease;
@@ -659,13 +659,40 @@ body > div {
     border-bottom: none;
 }
 
-/* Regras finais para uso exclusivamente em celular */
-html, body { width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
-body { min-height: 100vh; padding: 0; display: block; }
-body > div, .app { width: 100%; min-height: 100vh; border-left: 0; border-right: 0; }
-img { max-width: 100%; height: auto; }
-input, textarea, select, button { max-width: 100%; font-family: inherit; }
-.tabela-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+html, body { 
+    width: 100%; 
+    overflow-x: hidden; 
+    -webkit-text-size-adjust: 100%; 
+}
+
+body { 
+    min-height: 100vh; 
+    padding: 0; 
+    display: block; 
+}
+
+body > div, .app { 
+    width: 100%; 
+    min-height: 100vh; 
+    border-left: 0; 
+    border-right: 0; 
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+}
+
+input, textarea, select, button { 
+    max-width: 100%; 
+    font-family: inherit; 
+}
+
+.tabela-container { 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+}
+
 @media (max-width: 360px) {
     .conteudo, .conteudo-peso { width: calc(100% - 24px); }
     .menu-main { padding-left: 15px; padding-right: 15px; }
