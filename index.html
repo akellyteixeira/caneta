@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
     <link rel="icon" href="assets/favicon/favicon.png">
     <title>Canetinha</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <main>
         <div class="cabecalho">
@@ -22,9 +25,15 @@
                     <li><a href="hidratacao.html">Registrar hidratação</a></li>
                     <li><a href="musculacao.html">Registrar musculação</a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
-                </ul>    
+                </ul>
             </nav>
         </div>
     </main>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./service-worker.js");
+        }
+    </script>
 </body>
+
 </html>
