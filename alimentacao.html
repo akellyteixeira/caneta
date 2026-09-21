@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon/favicon.png">
+    <title>Canetinha | Alimentação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <header class="topo">
+            <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+        <aside class="menu-lateral" id="menuLateral">
+            <div class="menu-header">
+                <h2>Menu</h2>
+                <button class="fechar-menu" id="fecharMenu" type="button" aria-label="Fechar menu">
+                    &times;
+                </button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="dose.html">Registrar aplicação</a></li>
+                    <li><a href="alimentacao.html">Registrar alimentação</a></li>
+                    <li><a href="peso.html">Registrar peso</a></li>
+                    <li><a href="hidratacao.html">Hidratação</a></li>
+                    <li><a href="musculacao.html">Musculação</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="conteudo-alimentacao">
+            <h1>Alimentação</h1>
+            <p class="subtitulo-alimentacao">
+                Registre suas refeições e acompanhe
+                seus nutrientes.
+            </p>
+            <section class="configuracao-metas" id="configuracaoMetas">
+                <h2>Metas diárias</h2>
+                <p class="descricao-metas">
+                    Defina suas metas diárias de calorias e nutrientes.
+                </p>
+                <form id="formMetasAlimentacao">
+                    <div class="campo-meta">
+                        <label for="metaCaloriasInput">
+                            Meta de calorias
+                        </label>
+                        <div class="input-meta">
+                            <input type="number" id="metaCaloriasInput" name="metaCalorias" min="1" step="1"
+                                placeholder="Ex.: 1500" required>
+                            <span>kcal</span>
+                        </div>
+                    </div>
+                    <div class="campo-meta">
+                        <label for="metaProteinaInput">
+                            Meta de proteínas
+                        </label>
+                        <div class="input-meta">
+                            <input type="number" id="metaProteinaInput" name="metaProteina" min="1" step="0.1"
+                                placeholder="Ex.: 120" required>
+                            <span>g</span>
+                        </div>
+                    </div>
+                    <div class="campo-meta">
+                        <label for="metaCarboidratoInput">
+                            Meta de carboidratos
+                        </label>
+                        <div class="input-meta">
+                            <input type="number" id="metaCarboidratoInput" name="metaCarboidrato" min="1" step="0.1"
+                                placeholder="Ex.: 180" required>
+                            <span>g</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="botao-salvar-metas">
+                        Salvar metas
+                    </button>
+                </form>
+            </section>
+            <section class="progresso-alimentacao" id="progressoAlimentacao" hidden>
+                <h2>Seu progresso</h2>
+                <div class="progresso-nutriente">
+                    <div class="progresso-nutriente-topo">
+                        <span>
+                            Calorias
+                        </span>
+                        <strong>
+                            <span id="caloriasConsumidas">
+                                0
+                            </span>
+                            /
+                            <span id="metaCalorias">
+                                0
+                            </span>
+                            kcal
+                        </strong>
+                    </div>
+                    <div class="barra-meta-container">
+                        <div class="barra-meta" id="barraCalorias"></div>
+                    </div>
+                </div>
+                <div class="progresso-nutriente">
+                    <div class="progresso-nutriente-topo">
+                        <span>
+                            Proteínas
+                        </span>
+                        <strong>
+                            <span id="proteinaConsumida">
+                                0
+                            </span>
+                            /
+                            <span id="metaProteina">
+                                0
+                            </span>
+                            g
+                        </strong>
+                    </div>
+                    <div class="barra-meta-container">
+                        <div class="barra-meta" id="barraProteina"></div>
+                    </div>
+                </div>
+                <div class="progresso-nutriente">
+                    <div class="progresso-nutriente-topo">
+                        <span>
+                            Carboidratos
+                        </span>
+                        <strong>
+                            <span id="carboidratoConsumido">
+                                0
+                            </span>
+                            /
+                            <span id="metaCarboidrato">
+                                0
+                            </span>
+                            g
+                        </strong>
+                    </div>
+                    <div class="barra-meta-container">
+                        <div class="barra-meta" id="barraCarboidrato"></div>
+                    </div>
+                </div>
+                <button type="button" class="botao-editar-metas" id="editarMetas">
+                    Editar metas
+                </button>
+            </section>
+            <section class="alimento-selecionado" id="alimentoSelecionado">
+                <h2>Alimento selecionado</h2>
+                <div class="informacao-alimento">
+                    <div>
+                        <span class="label-info">
+                            Alimento
+                        </span>
+                        <strong id="nomeAlimento">
+                            Nenhum alimento selecionado
+                        </strong>
+                    </div>
+                    <div>
+                        <span class="label-info">
+                            Marca
+                        </span>
+                        <strong id="marcaAlimento">
+                            -
+                        </strong>
+                    </div>
+                    <div>
+                        <span class="label-info">
+                            Referência
+                        </span>
+                        <strong id="referenciaAlimento">
+                            -
+                        </strong>
+                    </div>
+                </div>
+                <div class="campo-alimento">
+                    <label for="quantidadeAlimento">
+                        Quantidade
+                    </label>
+                    <div class="campo-quantidade">
+                        <input type="number" id="quantidadeAlimento" name="quantidadeAlimento" min="1" step="1"
+                            placeholder="Ex.: 100">
+                        <span id="unidadeAlimento">
+                            g
+                        </span>
+                    </div>
+                </div>
+                <div class="campo-alimento">
+                    <label for="refeicao">
+                        Refeição
+                    </label>
+                    <select id="refeicao" name="refeicao">
+                        <option value="">
+                            Selecione
+                        </option>
+                        <option value="cafe-da-manha">
+                            Café da manhã
+                        </option>
+                        <option value="almoco">
+                            Almoço
+                        </option>
+                        <option value="lanche">
+                            Lanche
+                        </option>
+                        <option value="jantar">
+                            Jantar
+                        </option>
+                        <option value="outro">
+                            Outra
+                        </option>
+                    </select>
+                </div>
+                <div class="nutrientes-calculados">
+                    <div>
+                        <span>
+                            Calorias
+                        </span>
+                        <strong id="caloriasAlimento">
+                            0 kcal
+                        </strong>
+                    </div>
+                    <div>
+                        <span>
+                            Proteína
+                        </span>
+                        <strong id="proteinaAlimento">
+                            0 g
+                        </strong>
+                    </div>
+                    <div>
+                        <span>
+                            Carboidrato
+                        </span>
+                        <strong id="carboidratoAlimento">
+                            0 g
+                        </strong>
+                    </div>
+                    <div>
+                        <span>
+                            Gordura
+                        </span>
+                        <strong id="gorduraAlimento">
+                            0 g
+                        </strong>
+                    </div>
+                </div>
+                <button type="button" class="botao-adicionar-refeicao" id="adicionarRefeicao">
+                    Adicionar à refeição
+                </button>
+            </section>
+            <section class="refeicoes-dia">
+                <h2>Refeições de hoje</h2>
+                <article class="card-refeicao">
+                    <div class="titulo-refeicao">
+                        <h3>
+                            Café da manhã
+                        </h3>
+                        <strong>
+                            <span id="totalCafe">
+                                0
+                            </span>
+                            kcal
+                        </strong>
+                    </div>
+                    <div class="lista-alimentos" id="listaCafe">
+                        <p class="sem-alimentos">
+                            Nenhum alimento adicionado.
+                        </p>
+                    </div>
+                </article>
+                <article class="card-refeicao">
+                    <div class="titulo-refeicao">
+                        <h3>
+                            Almoço
+                        </h3>
+                        <strong>
+                            <span id="totalAlmoco">
+                                0
+                            </span>
+                            kcal
+                        </strong>
+                    </div>
+                    <div class="lista-alimentos" id="listaAlmoco">
+                        <p class="sem-alimentos">
+                            Nenhum alimento adicionado.
+                        </p>
+                    </div>
+                </article>
+                <article class="card-refeicao">
+                    <div class="titulo-refeicao">
+                        <h3>
+                            Lanche
+                        </h3>
+                        <strong>
+                            <span id="totalLanche">
+                                0
+                            </span>
+                            kcal
+                        </strong>
+                    </div>
+                    <div class="lista-alimentos" id="listaLanche">
+                        <p class="sem-alimentos">
+                            Nenhum alimento adicionado.
+                        </p>
+                    </div>
+                </article>
+                <article class="card-refeicao">
+                    <div class="titulo-refeicao">
+                        <h3>
+                            Jantar
+                        </h3>
+                        <strong>
+                            <span id="totalJantar">
+                                0
+                            </span>
+                            kcal
+                        </strong>
+                    </div>
+                    <div class="lista-alimentos" id="listaJantar">
+                        <p class="sem-alimentos">
+                            Nenhum alimento adicionado.
+                        </p>
+                    </div>
+                </article>
+            </section>
+            <section class="resumo-alimentacao">
+                <h2>Resumo do dia</h2>
+                <div class="resumo-nutrientes">
+                    <div>
+                        <span>
+                            Calorias
+                        </span>
+                        <strong id="resumoCalorias">
+                            0 kcal
+                        </strong>
+                    </div>
+                    <div>
+                        <span>
+                            Proteínas
+                        </span>
+                        <strong id="resumoProteina">
+                            0 g
+                        </strong>
+                    </div>
+                    <div>
+                        <span>
+                            Carboidratos
+                        </span>
+                        <strong id="resumoCarboidrato">
+                            0 g
+                        </strong>
+                    </div>
+                    <div>
+                        <span>
+                            Gorduras
+                        </span>
+                        <strong id="resumoGordura">
+                            0 g
+                        </strong>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        const menuButton =
+            document.getElementById("menuButton");
+        const menuLateral =
+            document.getElementById("menuLateral");
+        const fecharMenu =
+            document.getElementById("fecharMenu");
+        menuButton.addEventListener(
+            "click",
+            function () {
+                menuLateral.classList.add(
+                    "menu-aberto"
+                );
+            }
+        );
+        fecharMenu.addEventListener(
+            "click",
+            function () {
+                menuLateral.classList.remove(
+                    "menu-aberto"
+                );
+            }
+        );
+    </script>
+</body>
+</html>
