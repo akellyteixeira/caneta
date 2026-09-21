@@ -2,157 +2,87 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-
     <link rel="icon"
         href="assets/favicon/favicon.png">
-
     <title>Canetinha | Peso</title>
-
     <link rel="stylesheet"
         href="style.css">
-
 </head>
-
-
 <body>
-
     <div class="app">
-
-
-        <!-- =================================
-             TOPO
-        ================================== -->
-
         <header class="topo">
-
             <button
                 class="menu-button"
                 id="menuButton"
                 aria-label="Abrir menu">
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </button>
-
-
         </header>
-
-
-
-        <!-- =================================
-             MENU LATERAL
-        ================================== -->
-
         <aside
             class="menu-lateral"
             id="menuLateral">
-
             <div class="menu-header">
-
                 <h2>Menu</h2>
-
                 <button
                     class="fechar-menu"
                     id="fecharMenu"
                     aria-label="Fechar menu">
-
                     &times;
-
                 </button>
-
             </div>
-
-
             <nav>
-
                 <ul>
-
                     <li>
                         <a href="index.html">
                             Início
                         </a>
                     </li>
-
                     <li>
                         <a href="dose.html">
                             Registrar aplicação
                         </a>
                     </li>
-
                     <li>
                         <a href="alimentacao.html">
                             Registrar alimentação
                         </a>
                     </li>
-
                     <li>
                         <a href="peso.html">
                             Registrar peso
                         </a>
                     </li>
-
                     <li>
                         <a href="dashboard.html">
                             Dashboard
                         </a>
                     </li>
-
                 </ul>
-
             </nav>
-
         </aside>
-
-
-
-        <!-- =================================
-             CONTEÚDO
-        ================================== -->
-
         <main class="conteudo-peso">
-
-
             <h1>Registrar peso</h1>
-
             <p class="subtitulo">
                 Acompanhe sua evolução ao longo do tempo.
             </p>
-
-
-
-            <!-- =================================
-                 PESO INICIAL E META
-            ================================== -->
-
             <section class="config-peso">
-
                 <h2>
                     Configuração do peso
                 </h2>
-
                 <p class="descricao-secao">
                     Informe seu peso inicial e sua meta.
                 </p>
-
-
                 <form id="formMeta">
-
-
                     <div class="campo-peso">
-
                         <label for="pesoInicial">
                             Peso inicial
                         </label>
-
                         <div class="input-peso">
-
                             <input
                                 type="number"
                                 id="pesoInicial"
@@ -161,23 +91,14 @@
                                 min="0"
                                 step="0.1"
                                 required>
-
                             <span>kg</span>
-
                         </div>
-
                     </div>
-
-
-
                     <div class="campo-peso">
-
                         <label for="metaPeso">
                             Meta de peso
                         </label>
-
                         <div class="input-peso">
-
                             <input
                                 type="number"
                                 id="metaPeso"
@@ -186,127 +107,66 @@
                                 min="0"
                                 step="0.1"
                                 required>
-
                             <span>kg</span>
-
                         </div>
-
                     </div>
-
-
-
                     <button
                         type="submit"
                         class="botao-peso">
-
                         Salvar configuração
-
                     </button>
-
                 </form>
-
             </section>
-
-
-
-            <!-- =================================
-                 PROGRESSO
-            ================================== -->
-
             <section class="progresso-peso">
-
                 <h2>
                     Seu progresso
                 </h2>
-
-
                 <div class="progresso-info">
-
                     <div>
-
                         <span class="titulo-info">
                             Peso atual
                         </span>
-
                         <strong id="pesoAtual">
                             -- kg
                         </strong>
-
                     </div>
-
-
                     <div>
-
                         <span class="titulo-info">
                             Meta
                         </span>
-
                         <strong id="pesoMeta">
                             -- kg
                         </strong>
-
                     </div>
-
-
                     <div>
-
                         <span class="titulo-info">
                             Falta
                         </span>
-
                         <strong id="pesoFalta">
-                            -- kg
+                             -- kg
                         </strong>
-
                     </div>
-
                 </div>
-
-
-
-                <!-- BARRA DE PROGRESSO -->
-
                 <div class="barra-container">
-
                     <div
                         class="barra-progresso"
                         id="barraProgresso">
-
                     </div>
-
                 </div>
-
-
                 <p
                     class="porcentagem"
                     id="porcentagemProgresso">
-
                     0% do caminho percorrido
-
                 </p>
-
             </section>
-
-
-
-            <!-- =================================
-                 REGISTRO SEMANAL
-            ================================== -->
-
             <section class="registro-semanal">
-
                 <h2>
                     Registro semanal
                 </h2>
-
                 <p class="descricao-secao">
                     Registre seu peso para acompanhar sua evolução.
                 </p>
-
-
                 <form id="formPeso">
-
-
                     <div class="campo-peso">
 
                         <label for="dataPeso">
@@ -318,19 +178,12 @@
                             id="dataPeso"
                             name="dataPeso"
                             required>
-
                     </div>
-
-
-
                     <div class="campo-peso">
-
                         <label for="pesoAtualInput">
                             Peso atual
                         </label>
-
                         <div class="input-peso">
-
                             <input
                                 type="number"
                                 id="pesoAtualInput"
@@ -339,140 +192,65 @@
                                 min="0"
                                 step="0.1"
                                 required>
-
                             <span>kg</span>
-
                         </div>
-
                     </div>
-
-
-
                     <button
                         type="submit"
                         class="botao-peso">
-
                         Registrar peso
-
                     </button>
-
                 </form>
-
             </section>
-
-
-
-            <!-- =================================
-                 HISTÓRICO
-            ================================== -->
-
             <section class="historico-peso">
-
                 <h2>
                     Histórico de peso
                 </h2>
-
-
                 <div class="tabela-container">
-
                     <table>
-
                         <thead>
-
                             <tr>
-
                                 <th>
                                     Data
                                 </th>
-
                                 <th>
                                     Peso
                                 </th>
-
                                 <th>
                                     Diferença
                                 </th>
-
                             </tr>
-
                         </thead>
-
-
                         <tbody id="historico-peso-body">
-
-                            <!--
-
-                            Os registros serão
-                            carregados do banco
-                            de dados.
-
-                            Exemplo:
-
-                            <tr>
-                                <td>20/09/2026</td>
-                                <td>95,5 kg</td>
-                                <td>-1,2 kg</td>
-                            </tr>
-
-                            -->
-
                         </tbody>
-
                     </table>
-
                 </div>
-
             </section>
-
-
         </main>
-
     </div>
-
-
-
-    <!-- =================================
-         JAVASCRIPT DO MENU
-    ================================== -->
-
     <script>
-
         const menuButton =
             document.getElementById("menuButton");
-
         const menuLateral =
             document.getElementById("menuLateral");
-
         const fecharMenu =
             document.getElementById("fecharMenu");
-
-
         menuButton.addEventListener(
             "click",
             function () {
-
                 menuLateral.classList.add(
                     "menu-aberto"
                 );
-
             }
         );
-
-
         fecharMenu.addEventListener(
             "click",
             function () {
-
                 menuLateral.classList.remove(
                     "menu-aberto"
                 );
-
             }
         );
-
     </script>
-
-
 </body>
-
 </html>

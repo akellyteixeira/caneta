@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon/favicon.png">
+    <title>Canetinha | Hidratação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="topo">
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+        <aside class="menu-lateral" id="menuLateral">
+            <div class="menu-header">
+                <h2>Menu</h2>
+                <button
+                    class="fechar-menu"
+                    id="fecharMenu"
+                    aria-label="Fechar menu"
+                >
+                    &times;
+                </button>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Início
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dose.html">
+                            Registrar aplicação
+                        </a>
+                    </li>
+                    <li>
+                        <a href="alimentacao.html">
+                            Registrar alimentação
+                        </a>
+                    </li>
+                    <li>
+                        <a href="peso.html">
+                            Registrar peso
+                        </a>
+                    </li>
+                    <li>
+                        <a href="hidratacao.html">
+                            Hidratação
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html">
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="conteudo-hidratacao">
+            <h1>Hidratação</h1>
+            <p class="subtitulo-hidratacao">
+                Registre sua meta diária e acompanhe sua hidratação.
+            </p>
+            <section class="meta-hidratacao">
+                <h2>Meta diária</h2>
+                <p>
+                    Defina quantos litros de água você deseja tomar por dia.
+                </p>
+                <form id="formMetaAgua">
+                    <div class="campo-agua">
+                        <label for="metaAgua">
+                            Meta de água
+                        </label>
+                        <div class="input-agua">
+                            <input
+                                type="number"
+                                id="metaAgua"
+                                name="metaAgua"
+                                min="0.1"
+                                step="0.1"
+                                placeholder="Ex.: 2"
+                                required
+                            >
+                            <span>L</span>
+                        </div>
+                    </div>
+                    <button
+                        type="submit"
+                        class="botao-agua"
+                    >
+                        Salvar meta
+                    </button>
+                </form>
+            </section>
+            <section class="progresso-agua">
+                <h2>Seu progresso</h2>
+                <div class="quantidade-agua">
+                    <span>
+                        Quantidade tomada
+                    </span>
+                    <strong id="aguaTomada">
+                        0 ml
+                    </strong>
+                </div>
+                <div class="meta-atual-agua">
+                    <span>
+                        Meta diária
+                    </span>
+                    <strong id="metaAguaTexto">
+                        0 ml
+                    </strong>
+                </div>
+                <div class="barra-agua-container">
+                    <div
+                        class="barra-agua"
+                        id="barraAgua"
+                    ></div>
+                </div>
+                <p
+                    class="porcentagem-agua"
+                    id="porcentagemAgua"
+                >
+                    0%
+                </p>
+            </section>
+            <section class="adicionar-agua">
+                <h2>Adicionar água</h2>
+                <div class="botoes-agua">
+                    <button
+                        type="button"
+                        class="botao-copo"
+                        id="btn200"
+                    >
+                        + 200 ml
+                    </button>
+                    <button
+                        type="button"
+                        class="botao-copo"
+                        id="btn400"
+                    >
+                        + 400 ml
+                    </button>
+                </div>
+            </section>
+            <section class="historico-agua">
+                <h2>
+                    Histórico dos últimos 30 dias
+                </h2>
+                <div class="tabela-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Data
+                                </th>
+                                <th>
+                                    Quantidade
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="historico-agua-body">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        const menuButton =
+            document.getElementById("menuButton");
+        const menuLateral =
+            document.getElementById("menuLateral");
+        const fecharMenu =
+            document.getElementById("fecharMenu");
+        menuButton.addEventListener("click", function () {
+            menuLateral.classList.add("menu-aberto");
+        });
+        fecharMenu.addEventListener("click", function () {
+            menuLateral.classList.remove("menu-aberto");
+        });
+        const formMetaAgua =
+            document.getElementById("formMetaAgua");
+        const metaAgua =
+            document.getElementById("metaAgua");
+        const aguaTomada =
+            document.getElementById("aguaTomada");
+        const metaAguaTexto =
+            document.getElementById("metaAguaTexto");
+        const barraAgua =
+            document.getElementById("barraAgua");
+        const porcentagemAgua =
+            document.getElementById("porcentagemAgua");
+        const btn200 =
+            document.getElementById("btn200");
+        const btn400 =
+            document.getElementById("btn400");
+        const historicoAguaBody =
+            document.getElementById("historico-agua-body");
+        function obterDataHoje() {
+            const hoje = new Date();
+            const ano = hoje.getFullYear();
+            const mes =
+                String(hoje.getMonth() + 1).padStart(2, "0");
+            const dia =
+                String(hoje.getDate()).padStart(2, "0");
+            return `${ano}-${mes}-${dia}`;
+        }
+        function formatarData(data) {
+            const partes = data.split("-");
+            return `${partes[2]}/${partes[1]}/${partes[0]}`;
+        }
+        let metaDiaria =
+            Number(localStorage.getItem("metaAgua")) || 0;
+        let historico =
+            JSON.parse(
+                localStorage.getItem("historicoAgua")
+            ) || [];
+        function obterRegistroHoje() {
+            const hoje = obterDataHoje();
+            let registro =
+                historico.find(
+                    item => item.data === hoje
+                );
+            if (!registro) {
+                registro = {
+                    data: hoje,
+                    quantidade: 0
+                };
+                historico.push(registro);
+            }
+            return registro;
+        }
+        function atualizarTela() {
+            const registroHoje =
+                obterRegistroHoje();
+            const tomada =
+                registroHoje.quantidade;
+            aguaTomada.textContent =
+                `${tomada} ml`;
+            metaAguaTexto.textContent =
+                `${metaDiaria * 1000} ml`;
+            let porcentagem = 0;
+            if (metaDiaria > 0) {
+                porcentagem =
+                    (tomada / (metaDiaria * 1000)) * 100;
+            }
+            const porcentagemBarra =
+                Math.min(porcentagem, 100);
+            barraAgua.style.width =
+                `${porcentagemBarra}%`;
+            porcentagemAgua.textContent =
+                `${Math.round(porcentagem)}%`;
+            localStorage.setItem(
+                "historicoAgua",
+                JSON.stringify(historico)
+            );
+            atualizarHistorico();
+        }
+        formMetaAgua.addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
+                metaDiaria =
+                    Number(metaAgua.value);
+                localStorage.setItem(
+                    "metaAgua",
+                    metaDiaria
+                );
+                atualizarTela();
+            }
+        );
+        function adicionarAgua(quantidade) {
+            const registroHoje =
+                obterRegistroHoje();
+            registroHoje.quantidade += quantidade;
+            atualizarTela();
+        }
+        btn200.addEventListener(
+            "click",
+            function () {
+                adicionarAgua(200);
+            }
+        );
+        btn400.addEventListener(
+            "click",
+            function () {
+                adicionarAgua(400);
+            }
+        );
+        function atualizarHistorico() {
+            historicoAguaBody.innerHTML = "";
+            const hoje = new Date();
+            for (let i = 0; i < 30; i++) {
+                const data =
+                    new Date(hoje);
+                data.setDate(
+                    hoje.getDate() - i
+                );
+                const ano =
+                    data.getFullYear();
+                const mes =
+                    String(
+                        data.getMonth() + 1
+                    ).padStart(2, "0");
+                const dia =
+                    String(
+                        data.getDate()
+                    ).padStart(2, "0");
+                const dataFormatada =
+                    `${ano}-${mes}-${dia}`;
+                const registro =
+                    historico.find(
+                        item =>
+                            item.data === dataFormatada
+                    );
+                const quantidade =
+                    registro
+                        ? registro.quantidade
+                        : 0;
+                const linha =
+                    document.createElement("tr");
+                linha.innerHTML = `
+                    <td>
+                        ${formatarData(dataFormatada)}
+                    </td>
+                    <td>
+                        ${quantidade} ml
+                    </td>
+                `;
+                historicoAguaBody.appendChild(linha);
+            }
+
+        }
+        if (metaDiaria > 0) {
+            metaAgua.value =
+                metaDiaria;
+        }
+        atualizarTela();
+    </script>
+</body>
+</html>

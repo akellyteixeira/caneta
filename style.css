@@ -678,7 +678,16 @@ body:has(.menu-main) {
     overflow: hidden;
 }
 
-body:has(.menu-main) > div {
+body:has(.menu-main) {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body:has(.menu-main) > main {
     width: 100%;
     height: 100dvh;
     min-height: 100dvh;
@@ -687,4 +696,489 @@ body:has(.menu-main) > div {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+body:has(.menu-main) .cabecalho {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body:has(.menu-main) #logo {
+    width: 170px;
+    height: 240px;
+    max-width: 80vw;
+    padding: 0;
+    margin: 0;
+    object-fit: contain;
+}
+
+body:has(.menu-main) .menu-main {
+    width: 100%;
+    margin: 12px 0 0;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
+body:has(.menu-main) .menu-main ul {
+    width: calc(100vw - 40px);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    list-style: none;
+}
+
+body:has(.menu-main) .menu-main a {
+    width: 100%;
+    height: 45px;
+    min-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+    background-color: #c87d87;
+    color: #f4f1ea;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: 13px;
+    box-shadow: 0 7px 13px rgba(0, 0, 0, 0.11);
+}
+
+.conteudo-hidratacao {
+    width: calc(100% - 32px);
+    margin: 35px auto 0;
+    padding-bottom: 50px;
+}
+
+.conteudo-hidratacao h1 {
+    color: #6b7556;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.subtitulo-hidratacao {
+    color: #6b7556;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.meta-hidratacao {
+    width: 100%;
+    padding: 24px 18px;
+    background-color: #fffaf5;
+    border: 2px solid #ead9c9;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.meta-hidratacao h2,
+.progresso-agua h2,
+.adicionar-agua h2,
+.historico-agua h2 {
+    color: #6b7556;
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.meta-hidratacao > p {
+    color: #6b7556;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+#formMetaAgua {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-agua {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo-agua label {
+    color: #6b7556;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.input-agua {
+    position: relative;
+    width: 100%;
+}
+
+.input-agua input {
+    width: 100%;
+    height: 64px;
+    border: 2px solid #ead9c9;
+    border-radius: 18px;
+    background-color: #ffffff;
+    padding: 0 60px 0 18px;
+    color: #6b7556;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.input-agua input:focus {
+    border-color: #c87d87;
+    box-shadow: 0 0 0 5px rgba(200, 125, 135, 0.12);
+}
+
+.input-agua span {
+    position: absolute;
+    right: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7556;
+    font-size: 18px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.botao-agua {
+    width: 100%;
+    height: 64px;
+    border: none;
+    border-radius: 18px;
+    background-color: #c87d87;
+    color: #f4f1ea;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+.botao-agua:active {
+    transform: translateY(2px);
+}
+
+.progresso-agua {
+    width: 100%;
+    margin-top: 35px;
+    padding: 24px 18px;
+    background-color: #ffffff;
+    border: 2px solid #ead9c9;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.quantidade-agua,
+.meta-atual-agua {
+    width: 100%;
+    min-height: 76px;
+    padding: 15px;
+    margin-top: 12px;
+    background-color: #f4f1ea;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quantidade-agua span,
+.meta-atual-agua span {
+    color: #6b7556;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.quantidade-agua strong,
+.meta-atual-agua strong {
+    color: #c87d87;
+    font-size: 24px;
+}
+
+.barra-agua-container {
+    width: 100%;
+    height: 26px;
+    margin-top: 25px;
+    background-color: #ead9c9;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.barra-agua {
+    width: 0%;
+    height: 100%;
+    background-color: #c87d87;
+    border-radius: 50px;
+    transition: width 0.3s ease;
+}
+
+.porcentagem-agua {
+    color: #6b7556;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.adicionar-agua {
+    width: 100%;
+    margin-top: 35px;
+}
+
+.botoes-agua {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.botao-copo {
+    width: 100%;
+    height: 62px;
+    border: none;
+    border-radius: 16px;
+    background-color: #c87d87;
+    color: #f4f1ea;
+    font-size: 17px;
+    font-weight: 600;
+    box-shadow: 0 9px 16px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.botao-copo:active {
+    transform: translateY(2px);
+}
+
+.historico-agua {
+    width: 100%;
+    margin-top: 45px;
+    padding-bottom: 35px;
+}
+
+.historico-agua .tabela-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
+}
+
+.historico-agua table {
+    width: 100%;
+    min-width: 300px;
+    border-collapse: collapse;
+    background-color: #fffaf5;
+}
+
+.historico-agua th {
+    height: 58px;
+    padding: 12px;
+    background-color: #c87d87;
+    color: #f4f1ea;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.historico-agua td {
+    height: 55px;
+    padding: 12px;
+    color: #6b7556;
+    font-size: 14px;
+    border-bottom: 2px solid #ead9c9;
+}
+
+.historico-agua tbody tr:nth-child(even) {
+    background-color: #f4eee6;
+}
+
+.historico-agua tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.conteudo-musculacao {
+    width: calc(100% - 32px);
+    margin: 35px auto 0;
+    padding-bottom: 50px;
+}
+
+.conteudo-musculacao h1 {
+    color: #6b7556;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.subtitulo-musculacao {
+    color: #6b7556;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formulario-musculacao {
+    width: 100%;
+    padding: 24px 18px;
+    background-color: #fffaf5;
+    border: 2px solid #ead9c9;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+#formMusculacao {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-musculacao {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo-musculacao label {
+    color: #6b7556;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.campo-musculacao input {
+    width: 100%;
+    height: 64px;
+    border: 2px solid #ead9c9;
+    border-radius: 18px;
+    background-color: #ffffff;
+    padding: 0 18px;
+    color: #6b7556;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.campo-musculacao input:focus {
+    border-color: #c87d87;
+    box-shadow:
+        0 0 0 5px rgba(200, 125, 135, 0.12);
+}
+
+.campo-musculacao input::placeholder {
+    color: #b5aaa0;
+}
+
+.input-musculacao {
+    position: relative;
+    width: 100%;
+}
+
+.input-musculacao input {
+    padding-right: 65px;
+}
+
+.input-musculacao span {
+    position: absolute;
+    right: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7556;
+    font-size: 18px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.botao-musculacao {
+    width: 100%;
+    height: 64px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 18px;
+    background-color: #c87d87;
+    color: #f4f1ea;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+.botao-musculacao:active {
+    transform: translateY(2px);
+}
+
+.historico-musculacao {
+    width: 100%;
+    margin-top: 45px;
+    padding-bottom: 35px;
+}
+
+.historico-musculacao h2 {
+    color: #6b7556;
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.historico-musculacao .tabela-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 18px;
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.10);
+}
+
+.historico-musculacao table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    background-color: #fffaf5;
+}
+
+.historico-musculacao th {
+    height: 58px;
+    padding: 10px;
+    background-color: #c87d87;
+    color: #f4f1ea;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.historico-musculacao td {
+    height: 55px;
+    padding: 10px;
+    color: #6b7556;
+    font-size: 13px;
+    border-bottom: 2px solid #ead9c9;
+}
+
+.historico-musculacao tbody tr:nth-child(even) {
+    background-color: #f4eee6;
+}
+
+.historico-musculacao tbody tr:last-child td {
+    border-bottom: none;
 }
